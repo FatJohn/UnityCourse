@@ -32,3 +32,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Block Breaker/Library
+/Number Wizard/Library
+/NumberWizardUI/Library
+/Text101/Library
