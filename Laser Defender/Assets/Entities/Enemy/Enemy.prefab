@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 61473359136776288}
   - component: {fileID: 50764899053458564}
   - component: {fileID: 114555659128946264}
-  m_Layer: 0
+  - component: {fileID: 95214168052719434}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954025700416176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: -3.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.84}
   m_EdgeRadius: 0
+--- !u!95 &95214168052719434
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954025700416176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fc291dad3c997e42815e0b351c7fa5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114555659128946264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1777594457366570, guid: a832961ab738ca04881bd0d4ab10ec04, type: 2}
   Health: 150
+  ProjectileSpeed: 10
+  ShotsPerSeconds: 0.5
+  ScoreValue: 150
+  FireSound: {fileID: 8300000, guid: 0e122b85971322442a3e0d4166eba13c, type: 3}
+  DeadSound: {fileID: 8300000, guid: fc76d73c23ef45f4d8daf50696e3a29d, type: 3}
 --- !u!212 &212383362437290176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -130,8 +153,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 613830917
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b7f656e6a11947643b2766ced04d8a74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

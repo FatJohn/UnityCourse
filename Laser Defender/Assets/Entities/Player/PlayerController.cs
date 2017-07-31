@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float projecttileSpeed = 1;
     public float firingRate = 0.2f;
     public float Health = 250f;
+    public AudioClip FireSound;
 
     private float xmin;
     private float xmax;
@@ -64,14 +65,15 @@ public class PlayerController : MonoBehaviour
 
         if (Health <= 0)
         {
+            FindObjectOfType<LevelManager>().LoadLevel("Win Screen");
             Destroy(gameObject);
         }
     }
 
     private void Fire()
     {
-        var startPosition = transform.position + new Vector3(0, 1f, 0);
-        var laserBeam = Instantiate(projectile, startPosition, Quaternion.identity);
+        var laserBeam = Instantiate(projectile, transform.position, Quaternion.identity);
         laserBeam.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projecttileSpeed);
+        AudioSource.PlayClipAtPoint(FireSound, transform.position);
     }
 }
